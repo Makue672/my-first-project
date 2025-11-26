@@ -1,4 +1,3 @@
-#include "Book.h"
 #include "BookList_func.h"
 
 using std::cout;
@@ -8,7 +7,6 @@ using std::string;
 using std::getline;
 
 int main(){
-    Book book;
     int choice=1;
     do{
         cin>>choice;

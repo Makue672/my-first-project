@@ -2,7 +2,7 @@
 #define BOOKLIST_H
 
 #include "Book.h"
-#include "BookList_func.h"
+#include "globals.h"
 
 
 
