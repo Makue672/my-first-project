@@ -2,19 +2,14 @@
 #define BOOK_H  
 #include "BookList_func.h"
 
-#include <limits>
-#include <string>
-#include <cstdlib>
-using std::string;
-using std::cin;
 class Book{
-    private:
+    private://类的属性，书籍的标题，作者，ISBN号，私密封装
         string title;
         string author;
         string ISBN;
         int number;
-        int pages; //类的属性，书籍的标题，作者，ISBN号，私密封装
-    public:
+        int pages; 
+    public://类的公有方法
         Book(string atitle = "", string aauthor = "", string aISBN = "",int anumber = 0, int aPages = 0);//构造函数
         ~Book();//析构函数
 
