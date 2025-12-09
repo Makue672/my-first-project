@@ -1,20 +1,15 @@
-#include "BookList_func.h"
+#include "BookList.h"
+#include "globals.h"
 
-using std::cout;
-using std::cin;
-using std::endl;
-using std::string;
-using std::getline;
+
+extern void runMenu(BookList &list);
 
 int main(){
-    int choice=1;
-    BookList bl;
-    bl.setHead(NULL);
-    do{
-        cin>>choice;
-        menu(choice, bl.getHead());
-
-    }while(choice);
+    BookList bl; // 创建链表对象
+    
+    while(true){
+        runMenu(bl); 
+    }
     
     return 0;
 }
