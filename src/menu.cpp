@@ -3,6 +3,10 @@
 #include "globals.h"
 
 void menu(BookList &bl){
+    Book book;
+    string query;
+    int choiceofsearch;
+    cout<<"Menu"<<endl;
     cout<<"1. Add a book"<<endl;
     cout<<"2. Display all books"<<endl;
     cout<<"3. Search a book"<<endl;
@@ -14,22 +18,32 @@ void menu(BookList &bl){
     cin>>choice;
     switch(choice){
         case 1:
-            bl.addbook(BookList &head);
+            bl.addBook(book);
             break;
         case 2:
-            display();
+            bl.displayAll();
             break;
         case 3:
-            searchbook(head);
+            cout<<"Enter query: "<<endl;
+            cin>>query;
+            cout<<"Enter type of search: "<<endl;
+            cout<<"1. Search by ISBN"<<endl;
+            cout<<"2. Search by title"<<endl;
+            cout<<"3. Search by author"<<endl;
+            cout<<"4. Search by number"<<endl;
+            cin>>choiceofsearch;
+            bl.searchBook(query, choiceofsearch);
             break;
         case 4:
-            updatebook(head);
+            cout<<"Enter ISBN of book to update: "<<endl;
+            cin>>query;
+            bl.updateBook(query);
             break;
         case 5:
-            deletebook(head);
+            bl.deleteBook(query);
             break;
         case 6:
-            clear(head);
+            bl.clear();
             break;
         case 0:
             exit(0);
