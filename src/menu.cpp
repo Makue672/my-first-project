@@ -1,4 +1,6 @@
-#include "BookList_func.h"
+#include "Book.h"
+#include "BookList.h"
+#include "globals.h"
 
 void menu(BookList &bl){
     cout<<"1. Add a book"<<endl;
