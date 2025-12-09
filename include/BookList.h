@@ -3,6 +3,7 @@
 
 #include "Book.h"
 #include "globals.h"
+#include <vector>
 
 
 
