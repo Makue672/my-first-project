@@ -26,22 +26,15 @@ class BookList {//链表类，实现书库管理功能
         BookList();
         ~BookList();
 
-        BookNode *getHead(){
-            return head;
-        }
+        void addBook(const Book& book);
+        void deleteBook(const string& isbn);
+        void updateBook(const string& isbn);
         
-        void setHead(BookNode *aHead){
-            head = aHead; 
-        }
-        
-        BookNode addbook(BookNode *ahead);
-        //添加书籍
-        BookNode deletebook(Book &book);//删除书籍
-        void updatebook(Book &book);//修改书籍
-        void display();//显示所有书籍
-        BookNode *searchbook(Book &book);//查找书籍
-        int getSize();
-        void clear();//清空
+        int searchBook(const string& query, int type); //query:搜索内容，type:搜索类型（1-标题，2-作者，3-ISBN,4-编号）
+        BookNode* findByISBN(const string& isbn);  //通过ISBN查找并返回指针（用于删除和更新时的内部调用）
+
+        void displayAll();
+        void clear();
 };
 
 

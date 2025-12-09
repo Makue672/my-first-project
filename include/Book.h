@@ -8,7 +8,7 @@ class Book{
         string title;
         string author;
         string ISBN;
-        int number;
+        string number;
         int pages; 
     public://类的公有方法
         Book(string atitle = "", string aauthor = "", string aISBN = "",int anumber = 0, int aPages = 0);//构造函数
@@ -26,7 +26,7 @@ class Book{
         int getPages() const{
             return pages;
         }
-        int getNumber() const{
+        string getNumber() const{
             return number;
         }
         //访问器方法

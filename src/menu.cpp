@@ -1,6 +1,6 @@
 #include "BookList_func.h"
 
-void menu(BookList &head){
+void menu(BookList &bl){
     cout<<"1. Add a book"<<endl;
     cout<<"2. Display all books"<<endl;
     cout<<"3. Search a book"<<endl;
@@ -12,7 +12,7 @@ void menu(BookList &head){
     cin>>choice;
     switch(choice){
         case 1:
-            addbook(head);
+            bl.addbook(BookList &head);
             break;
         case 2:
             display();
