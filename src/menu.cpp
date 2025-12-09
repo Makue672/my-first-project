@@ -1,6 +1,6 @@
 #include "BookList_func.h"
 
-void menu(int choice,Book &book){
+void menu(int choice,BookNode* head){
     cout<<"1. Add a book"<<endl;
     cout<<"2. Display all books"<<endl;
     cout<<"3. Search a book"<<endl;
@@ -10,22 +10,25 @@ void menu(int choice,Book &book){
     cout<<"0. Exit"<<endl;
     switch(choice){
         case 1:
-            add_wholebook(book);
+            createlist(head);
             break;
         case 2:
-            display();
+            addbook(head);
             break;
         case 3:
-            searchbook(book);
+            display();
             break;
         case 4:
-            updatebook(book);
+            searchbook(head);
             break;
         case 5:
-            deletebook(book);
+            updatebook(head);
             break;
         case 6:
-            clear();
+            deletebook(head);
+            break;
+        case 7:
+            clear(head);
             break;
         case 0:
             exit(0);

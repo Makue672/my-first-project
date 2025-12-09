@@ -26,11 +26,20 @@ class BookList {//链表类，实现书库管理功能
         BookList();
         ~BookList();
 
-        void addbook(Book &book);//添加书籍
-        void deletebook(Book &book);//删除书籍
+        BookNode *getHead(){
+            return head;
+        }
+        
+        void setHead(BookNode *aHead){
+            head = aHead; 
+        }
+        
+        BookNode addbook(BookNode *ahead);
+        //添加书籍
+        BookNode deletebook(Book &book);//删除书籍
         void updatebook(Book &book);//修改书籍
         void display();//显示所有书籍
-        Book *searchbook(Book &book);//查找书籍
+        BookNode *searchbook(Book &book);//查找书籍
         int getSize();
         void clear();//清空
 };

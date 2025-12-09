@@ -8,9 +8,11 @@ using std::getline;
 
 int main(){
     int choice=1;
+    BookList bl;
+    bl.setHead(NULL);
     do{
         cin>>choice;
-        menu(choice);
+        menu(choice, bl.getHead());
 
     }while(choice);
     
