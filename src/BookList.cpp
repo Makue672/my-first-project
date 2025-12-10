@@ -23,7 +23,9 @@ void BookList::addBook(const Book& book) {
         while (current->next != nullptr) {
             current = current->next;
         }
+        newNode->data.InputaBook();
         current->next = newNode;
+ 
     }
     size++;
     cout << "Book added successfully!" << endl;
@@ -77,6 +79,7 @@ void BookList::displayAll() {
         return;
     }
     BookNode* current = head;
+    cout << "\n=== All of" << size << " Books ===" << endl;
     while (current != nullptr) {
         current->data.OutputaBook();
         current = current->next;
