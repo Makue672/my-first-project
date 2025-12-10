@@ -1,7 +1,7 @@
 #ifndef BOOK_H
 #define BOOK_H  
 
-#include <globals.h>
+#include "globals.h"
 
 class Book{
     private://类的属性，书籍的标题，作者，ISBN号，私密封装
