@@ -11,7 +11,7 @@ class Book{
         string number;
         int pages; 
     public://类的公有方法
-        Book() : number(0), pages(0) {}
+        Book() : pages(0) {}
         
         Book(string atitle, string aauthor, string aISBN, string anumber, int aPages)
             : title(atitle), author(aauthor), ISBN(aISBN), number(anumber), pages(aPages) {}
