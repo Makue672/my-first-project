@@ -1,0 +1,3 @@
+C:/Users/March/Desktop/my-first-project/build/CMakeFiles/LibrarySystem.dir
+C:/Users/March/Desktop/my-first-project/build/CMakeFiles/edit_cache.dir
+C:/Users/March/Desktop/my-first-project/build/CMakeFiles/rebuild_cache.dir

@@ -1,13 +1,12 @@
 cmake_minimum_required(VERSION 3.10)
-project(my-first-project)
+project(LibrarySystem)
 
 set(CMAKE_CXX_STANDARD 17)
 
-# 包含头文件目录
 include_directories(include)
 
-# 添加可执行文件，包含所有源文件
-add_executable(my-first-project 
+# 这里只包含存在的 .cpp 文件
+add_executable(LibrarySystem 
     src/main.cpp 
     src/BookList.cpp 
     src/menu.cpp
