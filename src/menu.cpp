@@ -15,6 +15,8 @@ void menu(BookList &bl){
     cout<<"5. Delete a book"<<endl;
     cout<<"6. Clear all books"<<endl;
     cout<<"0. Exit"<<endl;
+    cout<<endl;
+    cout<<"Enter your choice: "<<endl;
     int choice;
     cin>>choice;
     switch(choice){
