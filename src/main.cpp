@@ -10,6 +10,7 @@ int main(){
     
     while(true){
         menu(bl); 
+        system("pause");
     }
     
     return 0;
