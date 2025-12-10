@@ -45,33 +45,10 @@ void BookList::clear() {
     }
     head = nullptr;
     size = 0;
+    cout << "Book list cleared successfully!" << endl;
 }
 
-void BookList::deleteBook(const string& isbn) { 
-    if (head == nullptr) {
-        cout << "Book list is empty." << endl;
-        return;
-    }
-    BookNode* current = head;
-    BookNode* previous = nullptr;
-    while (current != nullptr) { 
-        if (current->data.getISBN() == isbn) {
-            if (previous == nullptr) { 
-                head = current->next; 
-            } else { 
-                previous->next = current->next; 
-            } 
-            delete current;
-            cout << "Book deleted successfully!" << endl;
-        }
-        
-    }
-    if(current == nullptr){
-        cout << "Book with ISBN " << isbn << " not found." << endl;
-        return;
-    }
-    size--;
-}
+
 
 void BookList::displayAll() {
     if (head == nullptr) {
@@ -152,6 +129,48 @@ int BookList::searchBook(const string& query, int type) {
     }
     cout << "Total number of books found: " << count << endl;
     return count;
+}
+
+void BookList::deleteBook(const string& isbn) { 
+    if (head == nullptr) {
+        cout << "Book list is empty." << endl;
+        return;
+    }
+    if(findByISBN(isbn) == nullptr){
+        cout << "Book with ISBN " << isbn << " not found." << endl;
+        return;
+    }else{
+        cout << "Book with ISBN " << isbn << " found." << endl;
+        cout << "Are you sure you want to delete this book? (y/n): ";
+        char confirm;
+        cin >> confirm;
+        if(confirm == 'y'){
+            BookNode* current = head;
+            BookNode* prev = nullptr;
+            while (current != nullptr) {
+                if (current->data.getISBN() == isbn) {
+                    if (prev == nullptr) {
+                        head = current->next;
+                    } else {
+                        prev->next = current->next;
+                    }
+                    delete current;
+                    cout << "Book deleted successfully!" << endl;
+                    size--;
+                    return;
+                }
+                prev = current;
+                current = current->next;
+            }
+        }else{
+            if(confirm == 'n'){
+                cout << "Book not deleted." << endl;
+                return;
+            }
+            cout << "Invalid input." << endl;
+            return;
+        }
+    }
 }
 
 void BookList::updateBook(const string& isbn) { 

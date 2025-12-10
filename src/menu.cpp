@@ -33,9 +33,9 @@ void menu(BookList &bl){
             cout<<"Enter query: "<<endl;
             
             cout<<"Enter type of search: "<<endl;
-            cout<<"1. Search by ISBN"<<endl;
-            cout<<"2. Search by title"<<endl;
-            cout<<"3. Search by author"<<endl;
+            cout<<"1. Search by Title"<<endl;
+            cout<<"2. Search by Author"<<endl;
+            cout<<"3. Search by ISBN"<<endl;
             cout<<"4. Search by number"<<endl;
             cout<<endl;
             cout<<"Your choice: "<<endl;
@@ -54,6 +54,7 @@ void menu(BookList &bl){
             break;
         case 5:
             cout<<endl;
+            cout<<"Enter ISBN of book to delete: "<<endl;
             cin>>query;
             bl.deleteBook(query);
             break;
@@ -62,6 +63,7 @@ void menu(BookList &bl){
             bl.clear();
             break;
         case 0:
+            bl.clear();
             exit(0);
             break;
     }
