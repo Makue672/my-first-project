@@ -34,26 +34,23 @@ class Book{
         //访问器方法
 
         void setTitle(){
-            cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             getline(cin, title);
         }
         void setAuthor(){
-            cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             getline(cin, author);
         }
         void setISBN(){
-            cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             getline(cin, ISBN);
         }
         void setPages(){
             cin >> pages;
         }
         void setNumber(){
-            cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             getline(cin, number);
         }
         //修改器方法
         void InputaBook(){
+            cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             cout << "Input book information:" << endl;
             cout << "Enter book title: ";
             setTitle();
@@ -61,10 +58,11 @@ class Book{
             setAuthor();
             cout << "Enter book ISBN: ";
             setISBN();
-            cout << "Enter book pages: ";
-            setPages();
             cout << "Enter book number: ";
             setNumber();
+            cout << "Enter book pages: ";
+            setPages();
+            
         }//输入书籍信息
         void OutputaBook() const{
             cout<<endl;
