@@ -37,6 +37,8 @@ void menu(BookList &bl){
             cout<<"2. Search by title"<<endl;
             cout<<"3. Search by author"<<endl;
             cout<<"4. Search by number"<<endl;
+            cout<<endl;
+            cout<<"Your choice: "<<endl;
             cin>>choiceofsearch;
             cout<<"Enter query: "<<endl;
             cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
@@ -52,6 +54,7 @@ void menu(BookList &bl){
             break;
         case 5:
             cout<<endl;
+            cin>>query;
             bl.deleteBook(query);
             break;
         case 6:
