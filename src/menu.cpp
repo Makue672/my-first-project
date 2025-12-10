@@ -6,6 +6,7 @@ void menu(BookList &bl){
     Book book;
     string query;
     int choiceofsearch;
+    cout<<endl;
     cout<<"Menu"<<endl;
     cout<<"1. Add a book"<<endl;
     cout<<"2. Display all books"<<endl;
@@ -18,12 +19,15 @@ void menu(BookList &bl){
     cin>>choice;
     switch(choice){
         case 1:
+            cout<<endl;
             bl.addBook(book);
             break;
         case 2:
+            cout<<endl;
             bl.displayAll();
             break;
         case 3:
+            cout<<endl;
             cout<<"Enter query: "<<endl;
             
             cout<<"Enter type of search: "<<endl;
@@ -39,14 +43,17 @@ void menu(BookList &bl){
             bl.searchBook(query, choiceofsearch);
             break;
         case 4:
+            cout<<endl;
             cout<<"Enter ISBN of book to update: "<<endl;
             cin>>query;
             bl.updateBook(query);
             break;
         case 5:
+            cout<<endl;
             bl.deleteBook(query);
             break;
         case 6:
+            cout<<endl;
             bl.clear();
             break;
         case 0:

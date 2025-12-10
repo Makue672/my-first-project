@@ -67,6 +67,7 @@ class Book{
             setNumber();
         }//输入书籍信息
         void OutputaBook() const{
+            cout<<endl;
             cout << "Book Information:" << endl;
             cout << "Title: " << getTitle() << endl;
             cout << "Author: " << getAuthor() << endl;
