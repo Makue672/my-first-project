@@ -42,13 +42,15 @@ class Book{
             getline(cin, author);
         }
         void setISBN(){
-            cin >> ISBN;
+            cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            getline(cin, ISBN);
         }
         void setPages(){
             cin >> pages;
         }
         void setNumber(){
-            cin >> number;
+            cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            getline(cin, number);
         }
         //修改器方法
         void InputaBook(){
@@ -69,8 +71,8 @@ class Book{
             cout << "Title: " << getTitle() << endl;
             cout << "Author: " << getAuthor() << endl;
             cout << "ISBN: " << getISBN() << endl;
-            cout << "Pages: " << getPages() << endl;
             cout << "Number: " << getNumber() << endl;
+            cout << "Pages: " << getPages() << endl;
         }//输出书籍信息
 };
 
