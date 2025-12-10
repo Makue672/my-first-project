@@ -11,8 +11,10 @@ class Book{
         string number;
         int pages; 
     public://类的公有方法
-        Book(string atitle = "", string aauthor = "", string aISBN = "",int anumber = 0, int aPages = 0);//构造函数
-        ~Book();//析构函数
+        Book() : number(0), pages(0) {}
+        
+        Book(string atitle, string aauthor, string aISBN, string anumber, int aPages)
+            : title(atitle), author(aauthor), ISBN(aISBN), number(anumber), pages(aPages) {}
 
         string getTitle() const{
             return title;
