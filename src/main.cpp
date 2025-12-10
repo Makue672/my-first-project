@@ -3,13 +3,13 @@
 #include "globals.h"
 
 
-extern void Menu(BookList &bl);
+extern void menu(BookList &bl);
 
 int main(){
     BookList bl; // 创建链表对象
     
     while(true){
-        Menu(bl); 
+        menu(bl); 
     }
     
     return 0;
