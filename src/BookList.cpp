@@ -18,8 +18,6 @@ void BookList::addBook(const Book& book) {
     if (head == nullptr) {
         head = newNode;
         head->data.InputaBook();
-        cout << "Book information:" << endl;
-        head->data.OutputaBook();//调试用代码
     } else {
         BookNode* current = head;
         while (current->next != nullptr) {
@@ -33,6 +31,10 @@ void BookList::addBook(const Book& book) {
 }
 
 void BookList::clear() {
+    if (head == nullptr) {
+        cout << "Book list is empty." << endl;
+        return;
+    }
     BookNode* current = head;
     while (current != nullptr) {
         BookNode* temp = current;
@@ -44,6 +46,10 @@ void BookList::clear() {
 }
 
 void BookList::deleteBook(const string& isbn) { 
+    if (head == nullptr) {
+        cout << "Book list is empty." << endl;
+        return;
+    }
     BookNode* current = head;
     BookNode* previous = nullptr;
     while (current != nullptr) { 
@@ -66,6 +72,10 @@ void BookList::deleteBook(const string& isbn) {
 }
 
 void BookList::displayAll() {
+    if (head == nullptr) {
+        cout << "Book list is empty." << endl;
+        return;
+    }
     BookNode* current = head;
     while (current != nullptr) {
         current->data.OutputaBook();
@@ -74,6 +84,10 @@ void BookList::displayAll() {
 }
 
 BookNode* BookList::findByISBN(const string& isbn) {
+    if (head == nullptr) {
+        cout << "Book list is empty." << endl;
+        return nullptr;
+    }
     BookNode* current = head;
     while (current != nullptr) {
         if (current->data.getISBN() == isbn) {
@@ -85,6 +99,10 @@ BookNode* BookList::findByISBN(const string& isbn) {
 }
 
 int BookList::searchBook(const string& query, int type) {
+    if (head == nullptr) {
+        cout << "Book list is empty." << endl;
+        return 0;
+    }
     BookNode* current = head;
     bool found = false;
     int count = 0;
@@ -134,6 +152,10 @@ int BookList::searchBook(const string& query, int type) {
 }
 
 void BookList::updateBook(const string& isbn) { 
+    if (head == nullptr) {
+        cout << "Book list is empty." << endl;
+        return;
+    }
     BookNode* current = findByISBN(isbn);
     if (current != nullptr) { 
         cout << "Enter new book information:" << endl;
