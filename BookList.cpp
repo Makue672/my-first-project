@@ -13,14 +13,22 @@ BookList::~BookList() {
 
 void BookList::addBook(const Book& book) {
     BookNode* newNode = new BookNode(book, nullptr);
-    
-    // 头插法
+
+    // 尾插法
     if (head == nullptr) {
         head = newNode;
+        head->data.InputaBook();
+        cout << "Book information:" << endl;
+        head->data.OutputaBook();//调试用代码
     } else {
-        newNode->next = head;
-        head = newNode;
+        BookNode* current = head;
+        while (current->next != nullptr) {
+            current = current->next;
+        }
+        current->next = newNode;
     }
     size++;
     cout << "Book added successfully!" << endl;
+    
+    book.OutputaBook();
 }
