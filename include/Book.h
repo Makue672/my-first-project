@@ -49,7 +49,27 @@ class Book{
             cin >> number;
         }
         //修改器方法
-
+        void InputaBook(){
+            cout << "Input book information:" << endl;
+            cout << "Enter book title: ";
+            setTitle();
+            cout << "Enter book author: ";
+            setAuthor();
+            cout << "Enter book ISBN: ";
+            setISBN();
+            cout << "Enter book pages: ";
+            setPages();
+            cout << "Enter book number: ";
+            setNumber();
+        }//输入书籍信息
+        void OutputaBook() const{
+            cout << "Book Information:" << endl;
+            cout << "Title: " << getTitle() << endl;
+            cout << "Author: " << getAuthor() << endl;
+            cout << "ISBN: " << getISBN() << endl;
+            cout << "Pages: " << getPages() << endl;
+            cout << "Number: " << getNumber() << endl;
+        }//输出书籍信息
 };
 
 
