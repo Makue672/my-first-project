@@ -25,13 +25,17 @@ void menu(BookList &bl){
             break;
         case 3:
             cout<<"Enter query: "<<endl;
-            cin>>query;
+            
             cout<<"Enter type of search: "<<endl;
             cout<<"1. Search by ISBN"<<endl;
             cout<<"2. Search by title"<<endl;
             cout<<"3. Search by author"<<endl;
             cout<<"4. Search by number"<<endl;
             cin>>choiceofsearch;
+            cout<<"Enter query: "<<endl;
+            cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            getline(cin, query);
+            cout<<"Searching..."<<endl;
             bl.searchBook(query, choiceofsearch);
             break;
         case 4:
