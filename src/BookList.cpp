@@ -147,7 +147,7 @@ void BookList::displayAll() {// 显示所有图书
         return;
     }
     BookNode* current = head;
-    cout << "\n=== All of" << size << " Books ===" << endl;
+    cout << "\n=== All the " << size << " Book(s) ===" << endl;
     while (current != nullptr) {
         current->data.OutputaBook();
         current = current->next;

@@ -8,7 +8,7 @@ void menu(BookList &bl){
     int choiceofsearch;
     cout<<endl;
     cout<<"Menu"<<endl;
-    cout<<"1. Add a book"<<endl;
+    cout<<"1. Add books"<<endl;
     cout<<"2. Display all books"<<endl;
     cout<<"3. Search a book"<<endl;
     cout<<"4. Update a book"<<endl;
