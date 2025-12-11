@@ -67,11 +67,11 @@ class Book{
         void OutputaBook() const{
             cout<<endl;
             cout << "Book Information:" << endl;
-            cout << "Title: " << getTitle() << endl;
-            cout << "Author: " << getAuthor() << endl;
-            cout << "ISBN: " << getISBN() << endl;
-            cout << "Number: " << getNumber() << endl;
-            cout << "Pages: " << getPages() << endl;
+            cout << "| Title: " << getTitle() << endl;
+            cout << "| Author: " << getAuthor() << endl;
+            cout << "| ISBN: " << getISBN() << endl;
+            cout << "| Number: " << getNumber() << endl;
+            cout << "| Pages: " << getPages() << endl;
         }//输出书籍信息
         bool readFromStream(ifstream& in) {//从文件流中读取书籍信息
             if (!getline(in, title)) return false; // 如果读取title失败，返回false
