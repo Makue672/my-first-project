@@ -20,8 +20,28 @@ LibrarySystem/
 │   ├── BookList.cpp
 │   ├── menu.cpp
 │   └── main.cpp
-操作：打开终端，进入项目目录，输入cmake .，输入make，输入./LibrarySystem
-    或直接运行LibrarySystem.exe，在命令窗口中输入菜单指令
+构建方式：
+    1. 打开C/C++IDE
+    2. 创建一个项目
+    3. 创建一个CMakeLists.txt文件
+    4. 添加以下内容
+        cmake_minimum_required(VERSION 3.10)
+        project(LibrarySystem)
+        set(CMAKE_CXX_STANDARD 17)
+        include_directories(include)
+        add_executable(LibrarySystem 
+            src/main.cpp 
+            src/BookList.cpp 
+            src/menu.cpp
+        )
+    5. 终端中输入：
+        Remove-Item -Recurse -Force build(如果存在build文件夹)
+        mkdir build
+        cd build
+        cmake -G "MinGW Makefiles" ..（如果在MinGW环境下编译）
+        cmake --build
+运行方式：
+    打开build文件夹下的LibrarySystem.exe或者IDE终端中输入：./LibrarySystem
 菜单指令：
     1. 添加图书
     2. 显示所有图书
