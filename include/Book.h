@@ -73,6 +73,24 @@ class Book{
             cout << "Number: " << getNumber() << endl;
             cout << "Pages: " << getPages() << endl;
         }//输出书籍信息
+        bool readFromStream(ifstream& in) {//从文件流中读取书籍信息
+            if (!getline(in, title)) return false; // 如果读取title失败，返回false
+            getline(in, author);
+            in >> ISBN;
+            in >> number;
+            in >> pages;
+
+            in.ignore(std::numeric_limits<std::streamsize>::max(), '\n');//忽略换行符
+            return true;
+        }
+
+        void writeToStream(ofstream& out) const {
+            out << title << endl;
+            out << author << endl;
+            out << ISBN << endl;
+            out << number << endl;
+            out << pages << endl;
+        }//将书籍信息写入文件流
 };
 
 
