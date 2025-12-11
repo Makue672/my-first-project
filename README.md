@@ -15,7 +15,7 @@ LibrarySystem/
 │   ├── menu.cpp
 │   └── main.cpp
 操作：打开终端，进入项目目录，输入cmake .，输入make，输入./LibrarySystem
-    或直接运行LibrarySystem.exe，在命令窗口中输入菜单指令
+    或直接运行LibrarySystem.exe，在命令窗口中输入菜单指令（注：build目录下的exe文件与源文件目录下的exe文件一致）
 菜单指令：
     1. 添加图书
     2. 显示所有图书
