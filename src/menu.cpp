@@ -31,8 +31,6 @@ void menu(BookList &bl){
             break;
         case 3:
             cout<<endl;
-            cout<<"Enter query: "<<endl;
-            
             cout<<"Enter type of search: "<<endl;
             cout<<"1. Search by Title"<<endl;
             cout<<"2. Search by Author"<<endl;

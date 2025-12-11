@@ -130,6 +130,7 @@ void BookList::clearfile() {// 清空缓存链表
             }
             head = nullptr;
             size = 0;
+            cout << "File cleared successfully!" << endl;
             saveToFile();
             return;
         }else{
