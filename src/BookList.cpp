@@ -105,6 +105,7 @@ void BookList::clear() {// 清空链表
     }
     head = nullptr;
     size = 0;
+    saveToFile();
     cout << "Book list cleared successfully!" << endl;
 }
 
