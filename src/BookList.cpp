@@ -89,7 +89,7 @@ void BookList::addBook(const Book& book) {// 添加图书
     }
     size+= num;
     cout << "Book(s) added successfully!" << endl;
-    
+    saveToFile();
 }
 
 void BookList::clear() {// 清空链表
@@ -217,6 +217,7 @@ void BookList::deleteBook(const string& isbn) { // 删除图书
                     delete current;
                     cout << "Book deleted successfully!" << endl;
                     size--;
+                    saveToFile();
                     return;
                 }
                 prev = current;
@@ -243,6 +244,7 @@ void BookList::updateBook(const string& isbn) { // 更新图书信息
         cout << "Enter new book information:" << endl;
         current->data.InputaBook();
         cout << "Book updated successfully!" << endl;
+        saveToFile();
         return;
     }
     if (current == nullptr){
