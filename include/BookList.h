@@ -39,7 +39,8 @@ class BookList {//链表类，实现书库管理功能
         BookNode* findByISBN(const string& isbn);  //通过ISBN查找并返回指针（用于删除和更新时的内部调用）
 
         void displayAll();
-        void clear();
+        void clearcash();
+        void clearfile();
 };
 
 

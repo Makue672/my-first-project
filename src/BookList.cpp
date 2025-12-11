@@ -8,7 +8,7 @@ BookList::BookList() {
 }
 
 BookList::~BookList() {
-    clear();
+    clearcash();
 }
 
 
@@ -92,7 +92,23 @@ void BookList::addBook(const Book& book) {// 添加图书
     saveToFile();
 }
 
-void BookList::clear() {// 清空链表
+void BookList::clearcash() {// 清空缓存链表
+    if (head == nullptr) {
+        cout << "Book list is empty." << endl;
+        return;
+    }
+    BookNode* current = head;
+    while (current != nullptr) {
+        BookNode* temp = current;
+        current = current->next;
+        delete temp;
+    }
+    head = nullptr;
+    size = 0;
+    cout << "Book list cash cleared successfully!" << endl;
+}
+
+void BookList::clearfile() {// 清空缓存链表
     if (head == nullptr) {
         cout << "Book list is empty." << endl;
         return;
@@ -106,10 +122,8 @@ void BookList::clear() {// 清空链表
     head = nullptr;
     size = 0;
     saveToFile();
-    cout << "Book list cleared successfully!" << endl;
+    cout << "File cleared successfully!" << endl;
 }
-
-
 
 void BookList::displayAll() {// 显示所有图书
     if (head == nullptr) {
