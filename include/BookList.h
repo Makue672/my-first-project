@@ -23,10 +23,14 @@ class BookList {//链表类，实现书库管理功能
     private:
         BookNode *head;
         int size;
+        const string FILE_NAME = "library_data.txt"; // 数据存储文件名
+
+        void saveToFile();// 私有辅助：将当前链表所有数据保存到文件
     public:
         BookList();
         ~BookList();
 
+        void loadFromFile(); // 从文件加载数据到链表
         void addBook(const Book& book);
         void deleteBook(const string& isbn);
         void updateBook(const string& isbn);

@@ -11,6 +11,55 @@ BookList::~BookList() {
     clear();
 }
 
+
+
+
+void BookList::saveToFile() {//保存到文件方法
+    ofstream out(FILE_NAME);
+    if (!out.is_open()) {
+        cout << "Error: Unable to save to file!" << endl;
+        return;
+    }
+
+    BookNode* current = head;
+    while (current != nullptr) {
+        current->data.writeToStream(out);
+        current = current->next;
+    }
+    out.close();
+    cout << "=====Data has saved to file automatically=====" << endl; 
+}
+
+void BookList::loadFromFile() {//从文件加载方法
+    ifstream in(FILE_NAME);
+    if (!in.is_open()) {// 文件可能不存在（第一次运行）
+        return;
+    }
+
+    int count = 0;
+    while (true) {
+        Book tempBook;
+        if (!tempBook.readFromStream(in)) break;// 如果读取失败（文件读完了），退出循环
+
+        cout << "Data Loading..." << endl;
+        BookNode* newNode = new BookNode(tempBook, nullptr);// 执行尾插法建立链表
+        if (head == nullptr) {
+            head = newNode;
+        } else {
+            BookNode* current = head;
+            while (current->next != nullptr) {
+                current = current->next;
+            }
+            current->next = newNode;
+        }
+        size++;
+        count++;
+    }
+    in.close();
+    if (count > 0) {
+        cout << "System has loaded " << count << " books from file." << endl;
+    }
+}
 void BookList::addBook(const Book& book) {// 添加图书
     int num;
     cout << "Enter number of books to add: "<< endl;
