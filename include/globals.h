@@ -11,6 +11,8 @@
 #include <iomanip>
 #include <cstring>
 #include <limits>
+#include <Windows.h>
+
 
 using std::cout;
 using std::cin;
