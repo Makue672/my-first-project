@@ -11,28 +11,39 @@ BookList::~BookList() {
     clear();
 }
 
-void BookList::addBook(const Book& book) {
-    BookNode* newNode = new BookNode(book, nullptr);
-
-    // 尾插法
-    if (head == nullptr) {
-        head = newNode;
-        head->data.InputaBook();
-    } else {
-        BookNode* current = head;
-        while (current->next != nullptr) {
-            current = current->next;
-        }
-        newNode->data.InputaBook();
-        current->next = newNode;
- 
+void BookList::addBook(const Book& book) {// 添加图书
+    int num;
+    cout << "Enter number of books to add: "<< endl;
+    cin >> num;
+    if (num <= 0) {
+        cout << "Invalid number of books." << endl;
+        return;
     }
-    size++;
-    cout << "Book added successfully!" << endl;
+    cout<<endl;
+    cout << "=== Input " << num <<" Book(s) Information ===" << endl;
+    for (int i = 1; i <= num; ++i) {
+        cout << "\n--- Book " << i << " ---" << endl;
+        BookNode* newNode = new BookNode(book, nullptr);
+
+        // 尾插法
+        if (head == nullptr) {
+            head = newNode;
+            head->data.InputaBook();
+        } else {
+            BookNode* current = head;
+            while (current->next != nullptr) {
+                current = current->next;
+            }
+            newNode->data.InputaBook();
+            current->next = newNode;
+        }
+    }
+    size+= num;
+    cout << "Book(s) added successfully!" << endl;
     
 }
 
-void BookList::clear() {
+void BookList::clear() {// 清空链表
     if (head == nullptr) {
         cout << "Book list is empty." << endl;
         return;
@@ -50,7 +61,7 @@ void BookList::clear() {
 
 
 
-void BookList::displayAll() {
+void BookList::displayAll() {// 显示所有图书
     if (head == nullptr) {
         cout << "Book list is empty." << endl;
         return;
@@ -63,7 +74,7 @@ void BookList::displayAll() {
     }
 }
 
-BookNode* BookList::findByISBN(const string& isbn) {
+BookNode* BookList::findByISBN(const string& isbn) {// 通过ISBN查找书籍
     if (head == nullptr) {
         cout << "Book list is empty." << endl;
         return nullptr;
@@ -78,7 +89,7 @@ BookNode* BookList::findByISBN(const string& isbn) {
     return nullptr;
 }
 
-int BookList::searchBook(const string& query, int type) {
+int BookList::searchBook(const string& query, int type) {// 搜索书籍
     if (head == nullptr) {
         cout << "Book list is empty." << endl;
         return 0;
@@ -131,7 +142,7 @@ int BookList::searchBook(const string& query, int type) {
     return count;
 }
 
-void BookList::deleteBook(const string& isbn) { 
+void BookList::deleteBook(const string& isbn) { // 删除图书
     if (head == nullptr) {
         cout << "Book list is empty." << endl;
         return;
@@ -173,7 +184,7 @@ void BookList::deleteBook(const string& isbn) {
     }
 }
 
-void BookList::updateBook(const string& isbn) { 
+void BookList::updateBook(const string& isbn) { // 更新图书信息
     if (head == nullptr) {
         cout << "Book list is empty." << endl;
         return;
