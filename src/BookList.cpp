@@ -113,15 +113,31 @@ void BookList::clearfile() {// 清空缓存链表
         cout << "Book list is empty." << endl;
         return;
     }
-    BookNode* current = head;
-    while (current != nullptr) {
-        BookNode* temp = current;
-        current = current->next;
-        delete temp;
+    string confirm;
+    cout << "Are you sure you want to clear the file? (y/n): ";
+    cin >> confirm;
+    if (confirm == "n") {
+        cout << "Operation cancelled." << endl;
+        return;
+    }else{
+        if(confirm == "y"){
+            cout << "Starting to clear file..." << endl;
+            BookNode* current = head;
+            while (current != nullptr) {
+                BookNode* temp = current;
+                current = current->next;
+                delete temp;
+            }
+            head = nullptr;
+            size = 0;
+            saveToFile();
+            return;
+        }else{
+            cout << "Invalid input." << endl;
+            return;
+        }
     }
-    head = nullptr;
-    size = 0;
-    saveToFile();
+    
     cout << "File cleared successfully!" << endl;
 }
 

@@ -13,7 +13,8 @@ void menu(BookList &bl){
     cout<<"3. Search a book"<<endl;
     cout<<"4. Update a book"<<endl;
     cout<<"5. Delete a book"<<endl;
-    cout<<"6. Clear all books"<<endl;
+    cout<<"6. Clear all books from cash"<<endl;
+    cout<<"7. Clear all books in file"<<endl;
     cout<<"0. Exit"<<endl;
     cout<<endl;
     cout<<"Enter your choice: "<<endl;
@@ -60,10 +61,14 @@ void menu(BookList &bl){
             break;
         case 6:
             cout<<endl;
-            bl.clear();
+            bl.clearcash();
+            break;
+        case 7:
+            cout<<endl;
+            bl.clearfile();
             break;
         case 0:
-            bl.clear();
+            bl.clearcash();
             exit(0);
             break;
     }
